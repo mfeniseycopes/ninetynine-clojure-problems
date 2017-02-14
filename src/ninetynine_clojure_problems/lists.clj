@@ -18,3 +18,10 @@
     (if (empty? tail)
       head 
       (recur (list* nxt tail)))))
+
+;; 3 - my-kth
+(defn my-kth
+  [[head & tail] k]
+  (if (< k 1)
+    head
+    (recur tail (dec k))))

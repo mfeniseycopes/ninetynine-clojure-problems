@@ -12,3 +12,9 @@
     (is (= (my-but-last '()) nil))
     (is (= (my-but-last '(1)) nil))
     (is (= (my-but-last '(1 2 3)) 2))))
+
+(deftest my-kth-test
+  (testing "#my-kth"
+    (is (= (my-kth '() 1) nil))
+    (is (= (my-kth '(1) 0) 1))
+    (is (= (my-kth '(1 2 3) 2) 3))))
