@@ -9,5 +9,6 @@
 
 (deftest my-but-last-test
   (testing "#my-but-last"
-    (is (= (my-but-last '(1 2 3)) 2))
-    (is (= (my-but-last '()) nil))))
+    (is (= (my-but-last '()) nil))
+    (is (= (my-but-last '(1)) nil))
+    (is (= (my-but-last '(1 2 3)) 2))))

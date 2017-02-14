@@ -16,5 +16,7 @@
   [ls]
   (loop [[el1 el2 & remaining] ls]
     (if (empty? remaining)
-      el1
+      (if (nil? el2)
+        nil
+        el1) 
       (recur (list* el2 remaining)))))
