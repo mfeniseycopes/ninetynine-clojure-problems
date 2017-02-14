@@ -9,3 +9,12 @@
     (if (empty? remaining)
       el
       (recur remaining))))
+
+;; 2 - my-but-last
+(defn my-but-last
+  "Extracts second to last element from a list"
+  [ls]
+  (loop [[el1 el2 & remaining] ls]
+    (if (empty? remaining)
+      el1
+      (recur (list* el2 remaining)))))
