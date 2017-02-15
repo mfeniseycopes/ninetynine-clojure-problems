@@ -23,3 +23,9 @@
   (testing "#length"
     (is (= (length '()) 0))
     (is (= (length '(1 2 3)) 3))))
+
+(deftest reverse-test
+  (testing "#reverse"
+    (is (= (reverse '()) '()))
+    (is (= (reverse '(1 2 3)) '(3 2 1)))))
+

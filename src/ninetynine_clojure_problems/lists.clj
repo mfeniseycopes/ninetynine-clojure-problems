@@ -35,7 +35,11 @@
       length
       (recur (rest recol) (inc length))))) 
 
-
+;; 5 - reverse
+(defn reverse
+  "Returns a reversed list"
+  [col]
+  (reduce conj '() col)) 
 
 
 
