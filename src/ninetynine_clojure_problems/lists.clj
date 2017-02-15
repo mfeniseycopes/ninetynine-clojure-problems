@@ -47,7 +47,15 @@
   [col]
   (= col (reverse col)))
 
-
+;; 7 - flatten
+(defn flatten
+  "Flattens a nested list"
+  [col]
+  (reduce 
+    (fn [acc el]
+      (concat acc (if (list? el) (flatten el) (list el))))
+    '() 
+    col)) 
 
 
 

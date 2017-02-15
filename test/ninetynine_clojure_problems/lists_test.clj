@@ -36,3 +36,8 @@
     (is (= (palindrome? '(1 2)) false))
     (is (= (palindrome? '(1 2 3 2)) false))))
 
+(deftest flatten-test
+  (testing "#flatten"
+    (is (= (flatten '()) '()))
+    (is (= (flatten '(1 (2 3))) '(1 2 3)))))
+
