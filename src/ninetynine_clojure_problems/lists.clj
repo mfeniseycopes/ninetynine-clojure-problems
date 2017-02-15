@@ -25,3 +25,21 @@
   (if (< k 1)
     head
     (recur tail (dec k))))
+
+;; 4 - length
+(defn length
+  "Returns the number of elements in a list"
+  [col]
+  (loop [recol col length 0]
+    (if (empty? recol)
+      length
+      (recur (rest recol) (inc length))))) 
+
+
+
+
+
+
+
+
+

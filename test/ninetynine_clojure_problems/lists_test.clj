@@ -18,3 +18,8 @@
     (is (= (my-kth '() 1) nil))
     (is (= (my-kth '(1) 0) 1))
     (is (= (my-kth '(1 2 3) 2) 3))))
+
+(deftest length-test
+  (testing "#length"
+    (is (= (length '()) 0))
+    (is (= (length '(1 2 3)) 3))))
