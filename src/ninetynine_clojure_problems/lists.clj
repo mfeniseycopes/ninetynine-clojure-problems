@@ -41,7 +41,11 @@
   [col]
   (reduce conj '() col)) 
 
-
+;; 6 - palindrome?
+(defn palindrome?
+  "Determines if collection is a palindrome."
+  [col]
+  (= col (reverse col)))
 
 
 

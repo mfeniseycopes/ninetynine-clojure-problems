@@ -29,3 +29,10 @@
     (is (= (reverse '()) '()))
     (is (= (reverse '(1 2 3)) '(3 2 1)))))
 
+(deftest palindrome?-test
+  (testing "#palindrome?"
+    (is (= (palindrome? '()) true))
+    (is (= (palindrome? '(1)) true))
+    (is (= (palindrome? '(1 2)) false))
+    (is (= (palindrome? '(1 2 3 2)) false))))
+
