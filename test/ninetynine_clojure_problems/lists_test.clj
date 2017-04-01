@@ -41,3 +41,8 @@
     (is (= (flatten '()) '()))
     (is (= (flatten '(1 (2 3))) '(1 2 3)))))
 
+(deftest compress-test
+  (testing "#compress"
+    (is (= (compress '()) '()))
+    (is (= (compress '(1 1)) '(1)))
+    (is (= (compress '(1 2 3 3 4 3 3)) '(1 2 3 4 3)))))

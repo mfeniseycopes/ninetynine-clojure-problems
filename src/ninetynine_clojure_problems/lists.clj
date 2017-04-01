@@ -57,5 +57,15 @@
     '() 
     col)) 
 
-
-
+;; 8 - compress
+(defn compress
+  "Removes duplicate repeating elements"
+  [col]
+  (reverse 
+    (reduce 
+      (fn [acc el]
+        (if (= el (first acc))
+          acc
+          (cons el acc)))
+        '() 
+        col)))
