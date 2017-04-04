@@ -69,3 +69,28 @@
           (cons el acc)))
         '() 
         col)))
+
+;; 8.x - compress-x
+(defn compress-x
+  "Removes duplicate repreating elements"
+  [col]
+  (map first (partition-by identity col)))
+
+;; 9 - pack
+(defn pack
+  "Pack conseqcutive elements into sublists"
+  [col]
+  (reverse 
+    (reduce 
+      (fn [acc el]
+        (if (or (empty? acc) (not= el (first (first acc))))
+          (cons (list el) acc)
+          (cons (cons el (first acc)) (rest acc))))
+      '() col)))
+
+;; 9.x - pack-x
+(defn pack-x
+  "Pack consecutive elements into sublists"
+  [col]
+  (partition-by identity col))
+

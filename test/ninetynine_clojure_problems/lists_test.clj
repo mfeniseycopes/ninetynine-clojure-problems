@@ -46,3 +46,23 @@
     (is (= (compress '()) '()))
     (is (= (compress '(1 1)) '(1)))
     (is (= (compress '(1 2 3 3 4 3 3)) '(1 2 3 4 3)))))
+
+(deftest compress-x-test
+  (testing "#compress-x"
+    (is (= (compress-x '()) '()))
+    (is (= (compress-x '(1 1)) '(1)))
+    (is (= (compress-x '(1 2 3 3 4 3 3)) '(1 2 3 4 3)))))
+
+(deftest pack-test
+  (testing "#pack"
+    (is (= (pack '()) '()))
+    (is (= (pack '(1)) '((1))))
+    (is (= (pack '(1 1)) '((1 1))))
+    (is (= (pack '(1 2 2 3)) '((1) (2 2) (3))))))
+
+(deftest pack-x-test
+  (testing "#pack-x"
+    (is (= (pack-x '()) '()))
+    (is (= (pack-x '(1 1)) '((1 1))))
+    (is (= (pack-x '(1 2 2 3)) '((1) (2 2) (3))))))
+
