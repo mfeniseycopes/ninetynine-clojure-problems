@@ -66,3 +66,9 @@
     (is (= (pack-x '(1 1)) '((1 1))))
     (is (= (pack-x '(1 2 2 3)) '((1) (2 2) (3))))))
 
+(deftest encode-test
+  (testing "#encode"
+    (is (= (encode '()) '()))
+    (is (= (encode '(1 1)) '((1 2))))
+    (is (= (encode '(1 2 2 3 3 3 3)) '((1 1) (2 2) (3 4))))))
+

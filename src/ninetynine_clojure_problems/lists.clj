@@ -94,3 +94,12 @@
   [col]
   (partition-by identity col))
 
+;; 10 - encode
+(defn encode
+  "Create a run-length encoding of the elements"
+  [col]
+  (map #(list (first %) (count %)) (pack col))) 
+
+
+
+
