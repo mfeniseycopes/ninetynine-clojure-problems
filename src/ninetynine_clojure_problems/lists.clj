@@ -100,6 +100,16 @@
   [col]
   (map #(list (first %) (count %)) (pack col))) 
 
-
+;; 11 - encode-modified
+(defn encode-mod
+  "Create a run-length encoding of the elements with single elements not in sublists"
+  [col]
+  (map 
+    (fn [pack]
+      (let [pack-size (count pack)]
+        (if (= pack-size 1)
+          (first pack)
+          (list (first pack) pack-size)))) 
+      (pack col)))
 
 
