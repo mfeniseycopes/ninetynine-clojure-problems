@@ -69,11 +69,11 @@
 (deftest encode-test
   (testing "#encode"
     (is (= (encode '()) '()))
-    (is (= (encode '(1 1)) '((1 2))))
-    (is (= (encode '(1 2 2 3 3 3 3)) '((1 1) (2 2) (3 4))))))
+    (is (= (encode '(1 1)) '((2 1))))
+    (is (= (encode '(1 2 2 3 3 3 3)) '((1 1) (2 2) (4 3))))))
 
 (deftest encode-modified-test
   (testing "#encode-mod"
     (is (= (encode-mod '()) '()))
-    (is (= (encode-mod '(1 1)) '((1 2))))
-    (is (= (encode-mod '(1 2 2 3 3 3 3)) '(1 (2 2) (3 4))))))
+    (is (= (encode-mod '(1 1)) '((2 1))))
+    (is (= (encode-mod '(1 2 2 3 3 3 3)) '(1 (2 2) (4 3))))))

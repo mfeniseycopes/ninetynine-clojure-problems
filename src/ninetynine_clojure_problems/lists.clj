@@ -98,7 +98,7 @@
 (defn encode
   "Create a run-length encoding of the elements"
   [col]
-  (map #(list (first %) (count %)) (pack col))) 
+  (map #(list (count %) (first %)) (pack col))) 
 
 ;; 11 - encode-modified
 (defn encode-mod
@@ -109,7 +109,7 @@
       (let [pack-size (count pack)]
         (if (= pack-size 1)
           (first pack)
-          (list (first pack) pack-size)))) 
+          (list pack-size (first pack))))) 
       (pack col)))
 
-
+;; 12 - decode
