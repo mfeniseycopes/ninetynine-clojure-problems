@@ -113,3 +113,10 @@
       (pack col)))
 
 ;; 12 - decode
+(defn decode
+  "Decode modified encoded list"
+  [col]
+  (reduce 
+    (fn [result [count & [val]]] 
+      (into result (repeat count val))) 
+    '() (reverse col)))

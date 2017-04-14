@@ -77,3 +77,9 @@
     (is (= (encode-mod '()) '()))
     (is (= (encode-mod '(1 1)) '((2 1))))
     (is (= (encode-mod '(1 2 2 3 3 3 3)) '(1 (2 2) (4 3))))))
+
+(deftest decode-test
+  (testing "#decode"
+    (is (= (decode '()) '()))
+    (is (= (decode  '((2 1))) '(1 1)))
+    (is (= (decode  '((1 1) (2 2) (4 3))) '(1 2 2 3 3 3 3)))))
