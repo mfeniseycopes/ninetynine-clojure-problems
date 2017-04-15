@@ -105,12 +105,11 @@
   "Create a run-length encoding of the elements with single elements not in sublists"
   [col]
   (map 
-    (fn [pack]
-      (let [pack-size (count pack)]
-        (if (= pack-size 1)
-          (first pack)
-          (list pack-size (first pack))))) 
-      (pack col)))
+    (fn [el]
+      (if (= (first el) 1)
+        (first el)
+        el))
+    (encode col)))
 
 ;; 12 - decode
 (defn decode
@@ -120,3 +119,17 @@
     (fn [result [count & [val]]] 
       (into result (repeat count val))) 
     '() (reverse col)))
+
+;; 13 - encode-direct
+(defn encode-direct
+  "Encode #encode-mod directly"
+  [col]
+  (map 
+    (fn [pack]
+      (let [pack-size (count pack)]
+        (if (= pack-size 1)
+          (first pack)
+          (list pack-size (first pack))))) 
+      (pack col)))
+
+
