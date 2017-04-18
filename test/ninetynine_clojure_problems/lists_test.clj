@@ -90,4 +90,7 @@
     (is (= (encode-direct '(1 1)) '((2 1))))
     (is (= (encode-direct '(1 2 2 3 3 3 3)) '(1 (2 2) (4 3))))))
 
-
+(deftest dupli-test
+  (testing "#dupli"
+    (is (= (dupli '()) '()))
+    (is (= (dupli '(1 2 3)) '(1 1 2 2 3 3)))))

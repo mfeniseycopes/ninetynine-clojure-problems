@@ -132,4 +132,8 @@
           (list pack-size (first pack))))) 
       (pack col)))
 
-
+;; 14 - dupli
+(defn dupli
+  "Duplicate the elements of a list"
+  [col]
+  (mapcat #(list % %) col))
