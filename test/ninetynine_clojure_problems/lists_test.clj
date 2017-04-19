@@ -101,8 +101,13 @@
     (is (= (replicate '(1 2 3) 2) '(1 1 2 2 3 3)))
     (is (= (replicate '(1 2 3) 0) '()))))
 
-(deftest drop-test
-  (testing "#drop"
-    (is (= (drop '() 5) '()))
-    (is (= (drop '(1 2 3 4 5) 2) '(1 3 5)))
-    (is (= (drop '(1 2 3) 1) '()))))
+(deftest drop-nth-test
+  (testing "#drop-nth"
+    (is (= (drop-nth '() 5) '()))
+    (is (= (drop-nth '(1 2 3 4 5) 2) '(1 3 5)))
+    (is (= (drop-nth '(1 2 3) 1) '()))))
+
+(deftest split-test
+  (testing "#split"
+    (is (= (split '() 5) '(() ())))
+    (is (= (split '(1 2 3) 2) '((1 2) (3))))))

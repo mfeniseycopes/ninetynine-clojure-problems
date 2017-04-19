@@ -144,10 +144,16 @@
   [col n]
   (mapcat #(repeat n %) col))
 
-;; 15 - drop
-(defn drop
+;; 16 - drop
+(defn drop-nth
   "Drop every n element"
   [col n]
   (keep-indexed 
     #(when (not= (mod (+ %1 1) n) 0) %2) 
     col))
+
+;; 17 - split
+(defn split
+  "Split list at kth element"
+  [col k]
+  (list (take k col) (drop k col)))
