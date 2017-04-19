@@ -141,7 +141,13 @@
 ;; 15 - replicate
 (defn replicate
   "Replicate the elements of a list a given number of times"
-  [col times]
-  (mapcat #(repeat times %) col))
+  [col n]
+  (mapcat #(repeat n %) col))
 
-
+;; 15 - drop
+(defn drop
+  "Drop every n element"
+  [col n]
+  (keep-indexed 
+    #(when (not= (mod (+ %1 1) n) 0) %2) 
+    col))

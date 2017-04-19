@@ -100,3 +100,9 @@
     (is (= (replicate '() 5) '()))
     (is (= (replicate '(1 2 3) 2) '(1 1 2 2 3 3)))
     (is (= (replicate '(1 2 3) 0) '()))))
+
+(deftest drop-test
+  (testing "#drop"
+    (is (= (drop '() 5) '()))
+    (is (= (drop '(1 2 3 4 5) 2) '(1 3 5)))
+    (is (= (drop '(1 2 3) 1) '()))))
