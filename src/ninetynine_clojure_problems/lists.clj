@@ -137,3 +137,11 @@
   "Duplicate the elements of a list"
   [col]
   (mapcat #(list % %) col))
+
+;; 15 - replicate
+(defn replicate
+  "Replicate the elements of a list a given number of times"
+  [col times]
+  (mapcat #(repeat times %) col))
+
+
