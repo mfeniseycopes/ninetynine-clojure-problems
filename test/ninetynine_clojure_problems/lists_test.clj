@@ -116,3 +116,9 @@
   (testing "#splice"
     (is (= (splice '() 1 3) '()))
     (is (= (splice '(1 2 3 4 5) 2 4) '(2 3))))) 
+
+(deftest rotate-test
+  (testing "#rotate"
+    (is (= (rotate '() 3) '()))
+    (is (= (rotate '(1 2 3 4) 2) '(3 4 1 2)))
+    (is (= (rotate '(1 2 3 4) 5) '(2 3 4 1)))))

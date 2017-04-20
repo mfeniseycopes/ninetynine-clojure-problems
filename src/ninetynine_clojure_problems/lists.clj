@@ -163,3 +163,12 @@
   "Remove ith to kth elements from a list"
   [col i k]
   (take (- k i) (drop (- i 1) col)))
+
+;; 19 - rotate
+(defn rotate
+  "Rotate list n places to the left"
+  [col n]
+  (if (empty? col)
+    col
+    (let [s (if (> n (count col)) (mod n (count col)) n)]
+      (concat (drop s col) (take s col)))))
