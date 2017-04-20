@@ -157,3 +157,9 @@
   "Split list at kth element"
   [col k]
   (list (take k col) (drop k col)))
+
+;; 18 - splice
+(defn splice
+  "Remove ith to kth elements from a list"
+  [col i k]
+  (take (- k i) (drop (- i 1) col)))

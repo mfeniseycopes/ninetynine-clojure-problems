@@ -111,3 +111,8 @@
   (testing "#split"
     (is (= (split '() 5) '(() ())))
     (is (= (split '(1 2 3) 2) '((1 2) (3))))))
+
+(deftest splice-test
+  (testing "#splice"
+    (is (= (splice '() 1 3) '()))
+    (is (= (splice '(1 2 3 4 5) 2 4) '(2 3))))) 
