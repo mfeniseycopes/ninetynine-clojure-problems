@@ -185,3 +185,13 @@
   [col k el]
   (let [[left right] (split col (- k 1))]
     (concat left (list el) right)))
+
+;; 22 - range
+(defn range-99
+  "Create a list with all elements inside a given range"
+  ([i j]
+    (range-99 i j '()))
+  ([i j acc]
+   (if (= i j)
+     (concat acc (list i))
+     (recur ((if (< i j) inc dec) i) j (concat acc (list i))))))

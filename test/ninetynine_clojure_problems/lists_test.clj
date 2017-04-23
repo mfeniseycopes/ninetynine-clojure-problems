@@ -133,3 +133,7 @@
     (is (= (insert '() 3 5) '(5)))
     (is (= (insert '(1 2 3 4) 3 "x") '(1 2 "x" 3 4)))))
 
+(deftest range-99-test
+  (testing "#range-99"
+    (= (range 1 2) '(1 2))
+    (= (range 5 2) '(5 4 3 2))))
