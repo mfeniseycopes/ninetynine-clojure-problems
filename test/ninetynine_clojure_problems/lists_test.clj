@@ -122,3 +122,9 @@
     (is (= (rotate '() 3) '()))
     (is (= (rotate '(1 2 3 4) 2) '(3 4 1 2)))
     (is (= (rotate '(1 2 3 4) 5) '(2 3 4 1)))))
+
+(deftest remove-kth-test 
+  (testing "#remove-kth"
+    (is (= (remove-kth '() 5) '()))
+    (is (= (remove-kth '(1 2 3) 2) '(1 3)))))
+

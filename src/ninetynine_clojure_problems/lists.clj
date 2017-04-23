@@ -172,3 +172,9 @@
     col
     (let [s (if (> n (count col)) (mod n (count col)) n)]
       (concat (drop s col) (take s col)))))
+
+;; 20 - remove-kth
+(defn remove-kth
+  "Remove kth element from a list and return the list"
+  [col k]
+  (concat (take (- k 1) col) (drop k col)))
