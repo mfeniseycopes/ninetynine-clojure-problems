@@ -178,3 +178,10 @@
   "Remove kth element from a list and return the list"
   [col k]
   (concat (take (- k 1) col) (drop k col)))
+
+;; 21 - insert
+(defn insert
+  "Insert element at kth position"
+  [col k el]
+  (let [[left right] (split col (- k 1))]
+    (concat left (list el) right)))

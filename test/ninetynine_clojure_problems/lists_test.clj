@@ -128,3 +128,8 @@
     (is (= (remove-kth '() 5) '()))
     (is (= (remove-kth '(1 2 3) 2) '(1 3)))))
 
+(deftest insert-test
+  (testing "#insert"
+    (is (= (insert '() 3 5) '(5)))
+    (is (= (insert '(1 2 3 4) 3 "x") '(1 2 "x" 3 4)))))
+
