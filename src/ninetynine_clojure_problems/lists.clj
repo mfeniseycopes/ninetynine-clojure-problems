@@ -210,3 +210,9 @@
           (remove-kth remaining-col r)
           (dec remaining-k)))
       selected)))
+
+;; 24 - lotto-select
+(defn lotto-select
+  "Randomly select k elements from a range of 1->m"
+  [k m]
+  (random-select (range m) k))

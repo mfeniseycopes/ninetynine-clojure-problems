@@ -142,3 +142,8 @@
   (testing "#random-select"
     (= (count (random-select '(1 2 3 4) 3)) 3)
     (empty? (random-select '(1 2 3 4) 0))))
+
+(deftest lotto-select-test
+  (testing "#lotto-select"
+    (= (count (lotto-select 4 3)) 3)
+    (empty? (lotto-select 9 0))))
