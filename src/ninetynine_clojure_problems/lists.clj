@@ -216,3 +216,9 @@
   "Randomly select k elements from a range of 1->m"
   [k m]
   (random-select (range m) k))
+
+;; 25 - rand-permutation
+(defn rand-permutation
+  "Randomly permute the elements of a list"
+  [col]
+  (random-select col (count col)))

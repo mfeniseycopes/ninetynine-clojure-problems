@@ -147,3 +147,9 @@
   (testing "#lotto-select"
     (= (count (lotto-select 4 3)) 3)
     (empty? (lotto-select 9 0))))
+
+
+(deftest rand-permutation-test
+  (testing "#rand-permuation"
+    (= (count (rand-permutation '(1 2 3 4 5))) 5)
+    (empty? (rand-permutation '()))))
