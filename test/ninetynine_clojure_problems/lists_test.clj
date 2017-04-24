@@ -137,3 +137,8 @@
   (testing "#range-99"
     (= (range 1 2) '(1 2))
     (= (range 5 2) '(5 4 3 2))))
+
+(deftest random-select-test
+  (testing "#random-select"
+    (= (count (random-select '(1 2 3 4) 3)) 3)
+    (empty? (random-select '(1 2 3 4) 0))))

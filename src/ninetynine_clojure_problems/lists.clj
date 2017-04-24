@@ -195,3 +195,18 @@
    (if (= i j)
      (concat acc (list i))
      (recur ((if (< i j) inc dec) i) j (concat acc (list i))))))
+
+;; 23 - random-select
+(defn random-select
+  "Randomly select k elements from the list"
+  [col k]
+  (loop [selected '() 
+         remaining-col col 
+         remaining-k k]
+    (if (> remaining-k 0)
+      (let [r (rand (count remaining-col))]
+        (recur 
+          (into selected (splice remaining-col r (inc r)))
+          (remove-kth remaining-col r)
+          (dec remaining-k)))
+      selected)))
