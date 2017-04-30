@@ -153,3 +153,8 @@
   (testing "#rand-permuation"
     (= (count (rand-permutation '(1 2 3 4 5))) 5)
     (empty? (rand-permutation '()))))
+
+(deftest combinations-test
+  (testing "#combinations"
+    (= (combinations '(1 2 3) 0) '(()))
+    (= (combinations '(1 2 3) 2) '((1 2) (1 3) (2 3)))))

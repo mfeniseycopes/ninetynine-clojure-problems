@@ -222,3 +222,16 @@
   "Randomly permute the elements of a list"
   [col]
   (random-select col (count col)))
+
+;; 26 - combinations
+(defn combinations
+  "Generate combinations of length k from a list"
+  [col k]
+  (if (= k 0)
+    '(())
+    (if (empty? col)
+      nil
+      (let [[head & tail] col
+            with (map #(cons head %) (combinations tail (dec k)))
+            without (combinations tail k)]
+        (concat with without)))))
