@@ -248,3 +248,19 @@
                    (group (apply list (clojure.set/difference (set col) (set g))) (rest sizes))))
             (combinations col (first sizes)))))
 
+;; 28 - lsorts
+(defn lsort
+  "Sorts elements of a list based on their length"
+  [col]
+  (sort-by count col))
+
+(defn lsort-freq
+  "Sorts elements of a list based on their length frequency"
+  [col]
+  (apply concat
+    (sort-by count 
+             (vals (reduce 
+                     (fn [hsh lst]
+                       (let [ct (count lst)]
+                         (assoc hsh ct (cons lst (or (get hsh ct) [])))))
+                     {} col)))))

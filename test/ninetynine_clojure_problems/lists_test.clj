@@ -164,3 +164,12 @@
     (= (count (group '(1 2 3) '(1 2))) 3)
     (= (count (group '(1 2 3) '(1 1 1))) 3)
     (= (count (group '(1 2 3) '(1 1 1))) 0)))
+
+(deftest lsort-test
+  (testing "#lsort"
+    (= (first (lsort '((3 3 3) (1)))) '(1))))
+
+(deftest lsort-freq-test
+  (testing "#lsort-freq"
+    (= (first (lsort-freq '((1) (2 2) (2 2)))) '(1))
+    (= (last (lsort-freq '((1) (2 2) (2 2)))) '(2 2))))
