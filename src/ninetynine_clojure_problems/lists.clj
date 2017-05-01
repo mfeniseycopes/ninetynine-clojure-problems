@@ -1,4 +1,5 @@
 (ns ninetynine-clojure-problems.lists
+  (:use [clojure.set :only [difference]])
   (:gen-class))
 
 ;; 1 - my-last
@@ -235,3 +236,15 @@
             with (map #(cons head %) (combinations tail (dec k)))
             without (combinations tail k)]
         (concat with without)))))
+
+;; 27 - group
+(defn group
+  "Group a collection"
+  [col sizes]
+  (if (empty? sizes)
+    '(nil)
+    (mapcat (fn [g]
+              (map #(conj % g)
+                   (group (apply list (clojure.set/difference (set col) (set g))) (rest sizes))))
+            (combinations col (first sizes)))))
+

@@ -158,3 +158,9 @@
   (testing "#combinations"
     (= (combinations '(1 2 3) 0) '(()))
     (= (combinations '(1 2 3) 2) '((1 2) (1 3) (2 3)))))
+
+(deftest group-test
+  (testing "#group"
+    (= (count (group '(1 2 3) '(1 2))) 3)
+    (= (count (group '(1 2 3) '(1 1 1))) 3)
+    (= (count (group '(1 2 3) '(1 1 1))) 0)))
