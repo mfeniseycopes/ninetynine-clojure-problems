@@ -14,3 +14,9 @@
     (= (greatest-common-divisor 1 1) 1)
     (= (greatest-common-divisor 100 125) 25)
     (= (greatest-common-divisor 7 19) 1)))
+
+(deftest coprime?-test 
+  (testing "#coprime?"
+    (is (coprime? 1 1))
+    (not (coprime? 100 125))
+    (is (coprime? 7 19))))

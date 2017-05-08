@@ -23,3 +23,9 @@
     (if (divides? b a)
       a
       (recur (- b a) a))))
+
+;; 33 - coprime?
+(defn coprime?
+  "Determine if two numbers are coprime"
+  [a b]
+  (= (greatest-common-divisor a b) 1))
