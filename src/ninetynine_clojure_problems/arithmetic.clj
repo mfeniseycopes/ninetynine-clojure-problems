@@ -11,7 +11,7 @@
   "Determine if a given integer is prime"
   [potential]
   (not-any? 
-    #(and (not= potential %) (zero? (mod potential %)))
+    #(and (not= potential %) (divides? potential %))
     (cons 2 (range 3 (inc (first (exact-integer-sqrt potential))) 2))))
 
 ;; 32 - gcd
