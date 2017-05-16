@@ -29,3 +29,9 @@
   "Determine if two numbers are coprime"
   [a b]
   (= (greatest-common-divisor a b) 1))
+
+;; 34 - totient
+(defn totient
+  "Euler's totient function - calculates number of coprime less than given number"
+  [n]
+  (reduce #(if (coprime? %2 n) (inc %1) %1) 0 (range 1 n)))

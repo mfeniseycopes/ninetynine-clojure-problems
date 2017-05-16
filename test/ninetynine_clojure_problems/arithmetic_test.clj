@@ -20,3 +20,8 @@
     (is (coprime? 1 1))
     (not (coprime? 100 125))
     (is (coprime? 7 19))))
+
+(deftest totient-test
+  (testing "#totient"
+    (is (totient 1) 0)
+    (is (totient 10) 4)))
