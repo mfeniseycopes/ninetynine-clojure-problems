@@ -35,3 +35,12 @@
   "Euler's totient function - calculates number of coprime less than given number"
   [n]
   (reduce #(if (coprime? %2 n) (inc %1) %1) 0 (range 1 n)))
+
+;; 35 - prime-factors
+(defn prime-factors
+  "Find all the prime factors of a number"
+  [n]
+  (if (= n 1)
+    '() 
+    (let [factor (first (filter #(divides? n %) (range 2 (inc n))))]
+      (cons factor (prime-factors (/ n factor))))))

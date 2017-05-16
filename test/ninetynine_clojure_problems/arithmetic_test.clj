@@ -25,3 +25,9 @@
   (testing "#totient"
     (is (totient 1) 0)
     (is (totient 10) 4)))
+
+(deftest prime-factors-test
+  (testing "#prime-factors"
+    (is (prime-factors 1) '())
+    (is (prime-factors 315) '(3 3 5 7))
+    (is (prime-factors 19) '(19))))
