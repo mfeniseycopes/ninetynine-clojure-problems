@@ -31,3 +31,9 @@
     (is (prime-factors 1) '())
     (is (prime-factors 315) '(3 3 5 7))
     (is (prime-factors 19) '(19))))
+
+(deftest prime-factors-mult-test
+  (testing "#prime-factors-mult"
+    (is (prime-factors-mult 1) '())
+    (is (prime-factors-mult 315) '((3 2) (5 1) (7 1)))
+    (is (prime-factors-mult 19) '((19 1)))))

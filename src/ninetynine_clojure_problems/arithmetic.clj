@@ -44,3 +44,9 @@
     '() 
     (let [factor (first (filter #(divides? n %) (range 2 (inc n))))]
       (cons factor (prime-factors (/ n factor))))))
+
+;; 36 - prime-factors-mult
+(defn prime-factors-mult
+  [n]
+  (map #(list (first %) (count %)) 
+       (partition-by identity (prime-factors n))))
