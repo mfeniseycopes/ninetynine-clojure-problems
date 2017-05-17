@@ -43,3 +43,7 @@
     (is (phi-improved 1) 0)
     (is (phi-improved 10) 4)))
 
+(deftest primes-test
+  (testing "#primes"
+    (is (primes 1 10) '(1 2 3 5 7))
+    (is (primes 0 1) '())))

@@ -57,3 +57,9 @@
   (reduce (fn [acc [factor mult]] 
             (* acc (dec factor) (expt factor (dec mult)))) 
           1 (prime-factors-mult n)))
+
+;; 39 - primes
+(defn primes
+  "Finds all the prime numbers in a range"
+  [m n]
+  (filter is-prime? (range m n)))
