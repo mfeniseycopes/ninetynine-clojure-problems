@@ -31,7 +31,7 @@
   (= (greatest-common-divisor a b) 1))
 
 ;; 34 - totient
-(defn totient
+(defn phi 
   "Euler's totient function - calculates number of coprime less than given number"
   [n]
   (reduce #(if (coprime? %2 n) (inc %1) %1) 0 (range 1 n)))
@@ -50,3 +50,10 @@
   [n]
   (map #(list (first %) (count %)) 
        (partition-by identity (prime-factors n))))
+
+;; 37 - phi-improved
+(defn phi-improved
+  [n]
+  (reduce (fn [acc [factor mult]] 
+            (* acc (dec factor) (expt factor (dec mult)))) 
+          1 (prime-factors-mult n)))

@@ -21,10 +21,10 @@
     (not (coprime? 100 125))
     (is (coprime? 7 19))))
 
-(deftest totient-test
-  (testing "#totient"
-    (is (totient 1) 0)
-    (is (totient 10) 4)))
+(deftest phi-test 
+  (testing "#phi"
+    (is (phi 1) 0)
+    (is (phi 10) 4)))
 
 (deftest prime-factors-test
   (testing "#prime-factors"
@@ -37,3 +37,9 @@
     (is (prime-factors-mult 1) '())
     (is (prime-factors-mult 315) '((3 2) (5 1) (7 1)))
     (is (prime-factors-mult 19) '((19 1)))))
+
+(deftest phi-improved-test 
+  (testing "#phi-improved"
+    (is (phi-improved 1) 0)
+    (is (phi-improved 10) 4)))
+
