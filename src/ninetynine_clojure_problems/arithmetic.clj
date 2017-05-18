@@ -73,3 +73,13 @@
   (some (fn [p]
           (and (is-prime? p) (is-prime? (- n p)) (list p (- n p)))) 
         (range 2 (inc (/ n 2)))))
+
+(defn print-goldbach
+  [[p1 p2]]
+  (printf "%s + %s = %s\n" p1 p2 (+ p1 p2)))
+
+;; 41 - goldbach-list
+(defn goldbach-list
+  "Finds goldbach compositions for each even number in a range"
+  [start end]
+  ((comp #(run! print-goldbach %) (partial keep goldbach)) (range start end)))
