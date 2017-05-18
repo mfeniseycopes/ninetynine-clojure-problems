@@ -47,12 +47,14 @@
 
 ;; 36 - prime-factors-mult
 (defn prime-factors-mult
+  "Finds a list of all prime factors and their multiplicities"
   [n]
   (map #(list (first %) (count %)) 
        (partition-by identity (prime-factors n))))
 
 ;; 37 - phi-improved
 (defn phi-improved
+  "Euler's totient function - calculates number of coprime less than given number"
   [n]
   (reduce (fn [acc [factor mult]] 
             (* acc (dec factor) (expt factor (dec mult)))) 
@@ -63,3 +65,11 @@
   "Finds all the prime numbers in a range"
   [m n]
   (filter is-prime? (range m n)))
+
+;; 40 - goldbachs
+(defn goldbach
+  "Finds the two primes which sum to a given positive even number"
+  [n]
+  (some (fn [p]
+          (and (is-prime? p) (is-prime? (- n p)) (list p (- n p)))) 
+        (range 2 (inc (/ n 2)))))

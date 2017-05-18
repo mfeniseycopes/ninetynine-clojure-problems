@@ -47,3 +47,9 @@
   (testing "#primes"
     (is (primes 1 10) '(1 2 3 5 7))
     (is (primes 0 1) '())))
+
+(deftest goldbach-test
+  (testing "#goldbach"
+    (nil? (goldbach 1))
+    (is (goldbach 4) '(2 2))
+    (is (goldbach 28) '(5 23))))
